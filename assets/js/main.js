@@ -109,3 +109,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// ============================================
+// HAMBURGER MENU
+// ============================================
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("open");
+            navLinks.classList.toggle("open");
+        });
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("open");
+                navLinks.classList.remove("open");
+            });
+        });
+    }
+});
