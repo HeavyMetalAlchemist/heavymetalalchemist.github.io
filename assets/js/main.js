@@ -88,3 +88,24 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 sections.forEach((section) => observer.observe(section));
+
+// ============================================
+// SCROLL TO TOP BUTTON
+// ============================================
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollTopBtn = document.getElementById("scroll-top");
+
+    if (scrollTopBtn) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                scrollTopBtn.classList.add("visible");
+            } else {
+                scrollTopBtn.classList.remove("visible");
+            }
+        });
+
+        scrollTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+});
