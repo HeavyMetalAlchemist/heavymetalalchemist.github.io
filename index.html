@@ -289,7 +289,7 @@
                             ~30 daily alerts</li>
                             <li>Designed an SLO violation forecasting pipeline using Holt-Winters 
                             and Monte Carlo confidence scoring - average violation lead-time of 
-                            19 days on validation data</li>
+                            19 days on validation data, against a target of 7 days</li>
                         </ul>
                         <div class="timeline-tags">
                             <span class="timeline-tag">Python</span>
@@ -331,8 +331,8 @@
                         </p>
                         <ul class="timeline-bullets">
                             <li>Designed and trained CNN, LSTM, and Transformer-based models 
-                            for music search, detection, and prediction tasks - achieving results 
-                            comparable to published benchmarks</li>
+                            for music search, detection, and prediction tasks - achieving 83-89%
+                            accuracy</li>
                             <li>Built a multi-stage NLP pipeline progressing from TF-IDF & Naive 
                             Bayes to fine-tuned BERT, improving performance by ~8% over the 
                             next-best model</li>
@@ -460,7 +460,7 @@
                     <ul class="project-highlights">
                         <li>Designed and trained CNN, LSTM, and Transformer-based models 
                         for audio-based music classification, similarity search, and attribute 
-                        detection - results comparable to published benchmarks</li>
+                        detection - achieved 83-89% accuracy</li>
                         <li>Built a multi-stage NLP pipeline from TF-IDF & Naive Bayes to 
                         fine-tuned BERT - 8% improvement over next-best model</li>
                         <li>Synthetic minority-class generation via AWS Bedrock with few-shot 
@@ -492,14 +492,14 @@
                         </div>
                         <h3 class="project-title">LLM Uncertainty Quantification</h3>
                         <p class="project-desc">
-                            Most ML systems tell you what they think. This project asks 
+                            Most LLMs tell you what they think. This project asks 
                             how confident they really are.
                         </p>
                     </div>
                     <ul class="project-highlights">
                         <li>Measured how reliably a model's confidence predicts correctness 
-                        across math reasoning and factual QA tasks - using 7 token-level 
-                        and sentence-level signals</li>
+                        across math reasoning and factual QA tasks - using 7 signals including 
+                        token entropy, sequence confidence, and log-prob variance</li>
                         <li>AUROC of 0.75 on reasoning tasks and 0.84 on factual QA - 
                         uncertainty signals rank errors well above random across both 
                         task types</li>
