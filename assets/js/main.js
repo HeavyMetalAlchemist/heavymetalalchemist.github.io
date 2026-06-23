@@ -132,3 +132,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// ============================================
+// SCROLL FADE-IN ANIMATION OBSERVER
+// ============================================
+document.addEventListener("DOMContentLoaded", () => {
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                // Once visible, stop observing
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+});

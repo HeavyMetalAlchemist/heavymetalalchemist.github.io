@@ -287,7 +287,7 @@ a:hover {
 /* ============================================
    HERO
    ============================================ */
-#hero {
+/* #hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -297,7 +297,7 @@ a:hover {
     background: radial-gradient(ellipse at 20% 50%,
         rgba(0, 212, 170, 0.05) 0%,
         transparent 60%);
-}
+} */
 
 .hero-container {
     max-width: var(--max-width);
@@ -1167,4 +1167,90 @@ img[alt="MCP"] {
     color: var(--accent);
     border: 2px solid var(--accent);
     box-shadow: 0 4px 20px rgba(0, 212, 170, 0.4);
+}
+/* ============================================
+   SCROLL FADE-IN ANIMATIONS
+   ============================================ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delay for grid items */
+.fade-in:nth-child(1) { transition-delay: 0.1s; }
+.fade-in:nth-child(2) { transition-delay: 0.2s; }
+.fade-in:nth-child(3) { transition-delay: 0.3s; }
+.fade-in:nth-child(4) { transition-delay: 0.4s; }
+.fade-in:nth-child(5) { transition-delay: 0.5s; }
+
+/* ============================================
+   HERO BACKGROUND — animated gradient orbs
+   ============================================ */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle,
+        rgba(0, 212, 170, 0.12) 0%,
+        transparent 70%);
+    top: -100px;
+    left: -100px;
+    animation: orb-move-1 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle,
+        rgba(0, 212, 170, 0.08) 0%,
+        transparent 70%);
+    bottom: -100px;
+    right: -100px;
+    animation: orb-move-2 15s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes orb-move-1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(80px, 60px) scale(1.1); }
+    100% { transform: translate(40px, 120px) scale(0.95); }
+}
+
+@keyframes orb-move-2 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(-60px, -80px) scale(1.15); }
+    100% { transform: translate(-120px, -40px) scale(0.9); }
+}
+
+/* ============================================
+   ENHANCED CARD HOVER GLOW
+   ============================================ */
+.skill-group:hover {
+    border-color: var(--accent-border);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.06);
+}
+
+.timeline-content:hover {
+    border-color: var(--accent-border);
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.06);
 }
