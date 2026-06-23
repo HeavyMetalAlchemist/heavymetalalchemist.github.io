@@ -865,7 +865,7 @@ img[alt="MCP"] {
 .timeline-tag {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: #c9a84c;
     background: var(--bg-secondary);
     padding: 4px 10px;
     border-radius: 4px;
@@ -1003,7 +1003,7 @@ img[alt="MCP"] {
 .project-tag {
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    color: var(--text-muted);
+    color: #c9a84c;
     background: var(--bg-secondary);
     padding: 3px 9px;
     border-radius: 4px;
