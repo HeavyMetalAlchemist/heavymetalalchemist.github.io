@@ -3,6 +3,7 @@
 // ============================================
 const roles = [
     "production ML systems.",
+    "scalable ML infrastructure.",
     "agentic AI pipelines.",
     "AIOps automation.",
     "end-to-end LLM solutions.",
