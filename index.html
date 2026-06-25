@@ -206,7 +206,7 @@
                     </div>
                 </div>
 
-                <!-- MLOps & APIs -->
+                <!-- MLOps & Observability -->
                 <div class="skill-group fade-in">
                     <h3 class="skill-group-title">MLOps & APIs</h3>
                     <div class="skill-tags">
@@ -223,6 +223,14 @@
                                 alt="OpenTelemetry" class="skill-icon"/>
                             <span>OpenTelemetry</span>
                         </div>
+                        <div class="skill-item">
+                            <img src="assets/icons/prometheus.svg" alt="Prometheus" class="skill-icon"/>
+                            <span>Prometheus</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/icons/grafana.svg" alt="Grafana" class="skill-icon"/>
+                            <span>Grafana</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Data Engineering -->
@@ -236,6 +244,14 @@
                         <div class="skill-item">
                             <img src="assets/icons/pandas.svg" alt="Pandas" class="skill-icon"/>
                             <span>Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/icons/postgresql.svg" alt="PostgreSQL" class="skill-icon"/>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/icons/redis.svg" alt="Redis" class="skill-icon"/>
+                            <span>Redis</span>
                         </div>
                         <div class="skill-item">
                             <img src="assets/icons/dask.svg" alt="Dask" class="skill-icon"/>
@@ -574,6 +590,54 @@
                         </div>
                     </div>
                 </div>
+                <!-- ── GitHub Issue Triage ── -->
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <div class="project-card-header-top">
+                            <i class="fas fa-folder-open project-icon"></i>
+                            <span class="project-badge badge-personal">Personal Project</span>
+                        </div>
+                        <h3 class="project-title">GitHub Issue Triage</h3>
+                        <p class="project-desc">
+                            A streaming pipeline that continuously enriches GitHub issues 
+                            with AI-powered classification — producer, consumer, dead letters, 
+                            and observability all running end-to-end.
+                        </p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Redis Streams with consumer groups for scalable message delivery 
+                        — at-least-once guarantee via XACK, XCLAIM for abandoned message 
+                        recovery</li>
+                        <li>Failed enrichments handled via dead letter stream and PostgreSQL 
+                        table with retry logic and exponential backoff — no silent failures</li>
+                        <li>98.6% classification accuracy against real maintainer labels from 
+                        a public repository</li>
+                        <li>Live Grafana dashboard provisioned automatically on startup — 
+                        tracking enrichment latency, throughput, category distributions, and 
+                        error rates in real time</li>
+                    </ul>
+                    <div class="project-card-footer">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Redis</span>
+                            <span class="project-tag">AWS Bedrock</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Prometheus</span>
+                            <span class="project-tag">Grafana</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HeavyMetalAlchemist/github-issue-triage" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
         </div>
