@@ -543,6 +543,55 @@
                         </div>
                     </div>
                 </div>
+                <!-- ── Phi-3 Mini LoRA Fine-tuning ── -->
+                <div class="project-card fade-in">
+                    <div class="project-card-header">
+                        <div class="project-card-header-top">
+                            <i class="fas fa-folder-open project-icon"></i>
+                            <span class="project-badge badge-personal">Personal Project</span>
+                        </div>
+                        <h3 class="project-title">LLM Fine-tuning with LoRA</h3>
+                        <p class="project-desc">
+                            Fine-tuned a 3.8B parameter LLM to produce structured JSON output 
+                            reliably - end-to-end, from synthetic data generation to adapter 
+                            training on AWS EC2.
+                        </p>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Phi-3 Mini (3.8B) fine-tuned with LoRA adapters applied to 4 
+                        attention and feedforward modules - 25M trainable parameters, trained 
+                        on AWS EC2 G4dn instance</li>
+                        <li>Synthetic training labels generated via AWS Bedrock with the 
+                        existing emotion label as an anchor; 1,174 valid examples after 
+                        filtering with stratified train/val/test splits</li>
+                        <li>Schema compliance improved from 4.6% strict baseline to 100% after 
+                            fine-tuning: overall accuracy rising from 54% to 81%</li>
+                        <li>EC2 G4dn instance fully provisioned via Terraform - VPC, IAM role, 
+                        and S3 access policy as code</li>
+                    </ul>
+                    <div class="project-card-footer">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PyTorch</span>
+                            <span class="project-tag">Hugging Face</span>
+                            <span class="project-tag">PEFT</span>
+                            <span class="project-tag">LoRA</span>
+                            <span class="project-tag">AWS EC2</span>
+                            <span class="project-tag">Bedrock</span>
+                            <span class="project-tag">Terraform</span>
+                            <span class="project-tag">W&B</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HeavyMetalAlchemist/phi3-lora-structured-output" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- ── PDF RAG API ── -->
                 <div class="project-card fade-in">
@@ -591,7 +640,7 @@
                     </div>
                 </div>
                 <!-- ── GitHub Issue Triage ── -->
-                <div class="project-card">
+                <div class="project-card hidden-project" style="display:none;">
                     <div class="project-card-header">
                         <div class="project-card-header-top">
                             <i class="fas fa-folder-open project-icon"></i>
@@ -639,6 +688,11 @@
                 </div>
 
 
+            </div>
+            <div class="show-more-container">
+                <button class="btn btn-secondary" id="show-more-btn">
+                    <i class="fas fa-chevron-down"></i> Show More
+                </button>
             </div>
         </div>
     </section>

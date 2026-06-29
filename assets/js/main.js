@@ -154,3 +154,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fadeElements.forEach(el => fadeObserver.observe(el));
 });
+
+// ============================================
+// SHOW MORE PROJECTS
+// ============================================
+document.addEventListener("DOMContentLoaded", () => {
+    const showMoreBtn = document.getElementById("show-more-btn");
+    const hiddenProjects = document.querySelectorAll(".hidden-project");
+
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener("click", () => {
+            const isOpen = showMoreBtn.classList.contains("open");
+
+            hiddenProjects.forEach(card => {
+                card.style.display = isOpen ? "none" : "flex";
+            });
+
+            showMoreBtn.classList.toggle("open");
+            showMoreBtn.innerHTML = isOpen
+                ? '<i class="fas fa-chevron-down"></i> Show More'
+                : '<i class="fas fa-chevron-up"></i> Show Less';
+        });
+    }
+});

@@ -329,13 +329,15 @@ a:hover {
     min-height: 2.5rem;
 }
 
+/* ============================================
+   HERO ROLE SLIDER
+   ============================================ */
 .role-dynamic {
     color: var(--accent);
     font-family: var(--font-heading);
     font-weight: 600;
     border-right: 2px solid var(--accent);
     padding-right: 4px;
-    /* Cursor blink animation */
     animation: blink 0.8s step-end infinite;
 }
 
@@ -343,7 +345,6 @@ a:hover {
     0%, 100% { border-color: var(--accent); }
     50%       { border-color: transparent; }
 }
-
 .hero-tagline {
     font-size: clamp(1rem, 2vw, 1.15rem);
     color: var(--text-secondary);
@@ -399,7 +400,7 @@ a:hover {
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .skill-item {
@@ -643,68 +644,7 @@ img[alt="MCP"] {
     font-size: 0.9rem;
 }
 
-/* ============================================
-   SKILLS
-   ============================================ */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-}
 
-.skill-group {
-    background: var(--bg-card);
-    border: 1px solid var(--text-muted);
-    border-radius: var(--radius);
-    padding: 28px;
-    transition: border-color var(--transition);
-}
-
-.skill-group:hover {
-    border-color: var(--accent-border);
-}
-
-.skill-group-title {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill-tag {
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    background: var(--bg-secondary);
-    border: 1px solid var(--text-muted);
-    padding: 6px 14px;
-    border-radius: 20px;
-    transition: all var(--transition);
-}
-
-.skill-tag:hover {
-    color: var(--accent);
-    border-color: var(--accent-border);
-    background: var(--accent-dim);
-}
-
-/* ============================================
-   SKILLS — Responsive
-   ============================================ */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* ============================================
    EXPERIENCE TIMELINE
@@ -889,8 +829,14 @@ img[alt="MCP"] {
    ============================================ */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project-card {
@@ -1014,19 +960,40 @@ img[alt="MCP"] {
     gap: 16px;
 }
 
+/* .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #58a6ff;
+    transition: color var(--transition);
+}
+
+.project-link:hover {
+    color: var(--accent);
+} */
 .project-link {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     font-family: var(--font-mono);
     font-size: 0.8rem;
-    color: var(--text-secondary);
+    color: #58a6ff;
     transition: color var(--transition);
+    animation: pulse-link 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-link {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
 }
 
 .project-link:hover {
-    color: var(--accent);
+    color: var(--accent); 
+    animation: none;
 }
+
 
 /* ============================================
    PROJECTS — Responsive
@@ -1253,4 +1220,27 @@ img[alt="MCP"] {
 .timeline-content:hover {
     border-color: var(--accent-border);
     box-shadow: 0 0 20px rgba(0, 212, 170, 0.06);
+}
+
+/* ============================================
+   SHOW MORE BUTTON
+   ============================================ */
+.show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+#show-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#show-more-btn i {
+    transition: transform var(--transition);
+}
+
+#show-more-btn.open i {
+    transform: rotate(180deg);
 }
