@@ -297,12 +297,12 @@
                             workflows with autonomous AI pipelines.
                         </p>
                         <ul class="timeline-bullets">
-                            <li>Built an event-driven RCA pipeline that automatically investigates 
+                            <li>Built and deployed an event-driven RCA pipeline that automatically investigates 
                             AWS incidents reported in Slack and posts root cause analysis in 
                             real time</li>
                             <li>Extended the RCA pipeline into a fully agentic system using 
-                            LangChain and LangGraph with dynamic MCP tool binding, deployed as 
-                            two production microservices containerized with Docker and orchestrated 
+                            LangChain and LangGraph with dynamic MCP tool binding, implemented as 
+                            two microservices containerized with Docker and orchestrated 
                             with Kubernetes</li>
                             <li>Deployed an AI alert classification system achieving 97% accuracy 
                             and 100% recall on Critical alerts, replacing manual review of 
@@ -407,7 +407,7 @@
                         <li>Extended into a fully agentic system with LangChain and LangGraph 
                         - stateful orchestration, dynamic MCP tool binding, prompt injection 
                         safeguards at the MCP layer</li>
-                        <li>Deployed as two production microservices - FastAPI inference layer 
+                        <li>Implemented as two microservices - FastAPI inference layer 
                         and custom MCP tool server, containerized with Docker and orchestrated 
                         with Kubernetes</li>
                         <li>TF-IDF log deduplication reduced LLM input tokens by up to 96% 
